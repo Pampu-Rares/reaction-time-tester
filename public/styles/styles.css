@@ -240,24 +240,26 @@ header {
 
 /* #region:leaderboard */
 #leaderboard-container {
-    width: clamp(20px, 70%, 650px);
+    width: fit-content;
+    max-width: 90%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: safe center;
+    overflow-x: auto;
 }
 
 #leaderboard-container span {
     display: inline-block;
     width: 100%;
-    border-bottom: var(--text-color) 5px solid;
 }
 
 #leaderboard {
+    border-top: var(--text-color) 5px solid;
     border-collapse: collapse;
-    width: 100%;
 }
 
 #leaderboard th, #leaderboard td {
+    padding: 5px;
     font-size: 0.8rem;
 }
 

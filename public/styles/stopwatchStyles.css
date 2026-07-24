@@ -15,11 +15,11 @@ select {
     appearance: none;
     height: 100%;
     width: fit-content;
-    padding-right: 2px;
+    padding: 5px;
     vertical-align: middle;
     border-radius: 10px;
     cursor: pointer;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     background-color: var(--background-color);
     color: var(--text-color);
     text-align: center;
