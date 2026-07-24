@@ -257,6 +257,10 @@ header {
     width: 100%;
 }
 
+#leaderboard th, #leaderboard td {
+    font-size: 0.8rem;
+}
+
 #leaderboard td {
     text-align: center;
 }
@@ -278,6 +282,7 @@ header {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     gap: 10px;
 }
 

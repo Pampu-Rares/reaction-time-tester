@@ -31,6 +31,7 @@ let roundStarted = false, isResetting = false, singlePlayer = true, noLatency = 
 let playsCount = 0
 let startTime, endTime, targetDifficulty = 'easy-difficulty'
 let player = 1, playerOneWins = 0, playerTwoWins = 0
+let winner
 
 
 function resetGame(isFullReset = false) {
@@ -48,6 +49,12 @@ function resetGame(isFullReset = false) {
         else {
             player = 1
             playBtn.innerText = 'Player 1: Play'
+            if(!isFullReset) {
+                const difficultyToInt = targetDifficulty === 'easy-difficulty' ? 1 : targetDifficulty === 'medium-difficulty' ? 2 : 3
+                if(winner === 1)
+                    askForLeaderboardEntry(playerOneTime.innerText.slice(0, -1), difficultyToInt, (20 - playerOneHits.innerText.split('/')[0]))
+                else askForLeaderboardEntry(playerTwoTime.innerText.slice(0, -1), difficultyToInt, (20 - playerTwoHits.innerText.split('/')[0]))
+            }
             playerOneTime.innerText = 'TBD'
             playerOneHits.innerText = '0/20'
             playerTwoTime.innerText = 'TBD'
@@ -107,11 +114,11 @@ function endRound() {
 }
 
 function showWinner() {
+    winner = null
     let playerOneInterval = Number(playerOneTime.innerText.slice(0, playerOneTime.innerText.length - 1))
     let playerOneMisses = 20 - playerOneHits.innerText.split('/')[0]
     let playerTwoInterval = Number(playerTwoTime.innerText.slice(0, playerTwoTime.innerText.length - 1))
     let playerTwoMisses = 20 - playerTwoHits.innerText.split('/')[0]
-    let winner
     if(playerOneInterval + playerOneMisses * 2.0 < playerTwoInterval + playerTwoMisses * 2.0) winner = 1
     else if(playerOneInterval + playerOneMisses * 2.0 > playerTwoInterval + playerTwoMisses * 2.0) winner =  2
     winnerDialog.innerHTML = `

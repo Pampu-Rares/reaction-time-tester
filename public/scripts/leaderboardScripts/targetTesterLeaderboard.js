@@ -10,7 +10,7 @@ const exitEntryDialog = document.getElementById("close-leaderboard-entry-contain
 let leaderboardEntries = []
 let targetTesterRecordId = sessionStorage.getItem("targetTesterRecordId") || null
 
-let difficulties = {
+const difficulties = {
     "1": "Easy",
     "2": "Medium",
     "3": "Hard"

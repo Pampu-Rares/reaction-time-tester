@@ -89,7 +89,10 @@ async function enterEntry() {
 
 function askForLeaderboardEntry(time, targetTime) {
     if( leaderboardEntries.length < 20 || time < leaderboardEntries[leaderboardEntries.length - 1].time || (time == leaderboardEntries[leaderboardEntries.length - 1].time && targetTime > leaderboardEntries[leaderboardEntries.length - 1].achieved_time) ) {
-        if(!stopwatchRecordId || (stopwatchRecordId && (targetTime > timeTargetSpan.innerText || achievedTimeSpan.innerText > time))) {
+        let oldRecord
+        if(stopwatchRecordId)
+            oldRecord = leaderboardEntries.find(record => record.id == stopwatchRecordId)
+        if(!stopwatchRecordId || (stopwatchRecordId && (targetTime > oldRecord.time_target || oldRecord.achieved_time > time))) {
         achievedTimeSpan.innerText = time
         timeTargetSpan.innerText = targetTime
         newEntryDialog.showModal()
