@@ -1,11 +1,16 @@
 # reaction-tester
-A web application that tests your reaction time through various minigames
+A full-stack web application that tests your reaction time through various minigames and stores your best attempts in a leaderboard.
 
-![A depiction of how one of the minigames looks](./media/readme_thumbnails/targetTesterPrev.png)
+![A depiction of how one of the minigames looks](./public/media/readme_thumbnails/targetTesterPrev.png)
 
-You can try this webpage for yourself [here](https://pampu-rares.github.io/reaction-tester/).
+You can try a demo of the webpage for yourself [here](https://pampu-rares.github.io/reaction-tester/). It does not include the leaderboards, which require NodeJs.
 
 ## Getting Started
+
+### Prerequisites
+
+This project requires Node.js installed on your system.
+- If you do not have Node.js installed, you can install it from [here](https://nodejs.org/en/download);
 
 ### Installation
 
@@ -15,7 +20,21 @@ You can try this webpage for yourself [here](https://pampu-rares.github.io/react
 git  clone  https://github.com/Pampu-Rares/reaction-tester.git
 ```
 
-2. You can now host the project locally
+2. Create a `.env` file in the root directory and write a value for the `PORT` (the project defaults to port 2020 if you skip this step)
+
+```env
+PORT=5050 # enter your desired port number
+```
+
+3. Open a terminal in the root repository and write:
+
+```shell
+npm run dev
+```
+
+4. Open a tab in your browser to localhost:5050 or the port number you have written in the `.env` file.
+
+ - You can delete the `src/database/leaderboards.sqlite` file if you want to create a fresh database with no previous entries
 
 ## Usage
 
@@ -25,7 +44,7 @@ The main page displays a list of all of the available minigames. Currently, ther
 
 - Each one offers the option for both 1-player and 2-player
 
-![Main Page](./media/readme_thumbnails/mainPagePrev.png?)
+![Main Page](./public/media/readme_thumbnails/mainPagePrev.png?)
 
 ### Target Tester Minigame
 
@@ -34,7 +53,7 @@ This minigame tests your ability to shoot a number 20 targets as fast as you can
 - ⭐It has three difficulties: Easy, Medium and Hard
 Choose the desired one or challenge yourself by making the target smaller
 
-![Target Tester Minigame](./media/readme_thumbnails/targetTesterPrev.png)
+![Target Tester Minigame](./public/media/readme_thumbnails/targetTesterPrev.png)
 
 ### Reaction Time Minigame
 
@@ -43,7 +62,7 @@ All you have to do is click in the blue rectangle and follow the written instruc
 
 - 💡Pro tip: You can also press the Spacebar instead of clicking the blue area
 
-![Reaction Time Minigame](./media/readme_thumbnails/reactionTesterPrev.png)
+![Reaction Time Minigame](./public/media/readme_thumbnails/reactionTesterPrev.png)
 
 ### Stopwatch Tester Minigame
 
@@ -52,7 +71,13 @@ This minigame challenges your internal clock. Select a time interval and, after 
 - 💡Pro tip: You can also press the Spacebar instead of clicking the blue area
 - ⌚You can select between 10, 15 and 20 seconds
 
-![Reaction Time Minigame](./media/readme_thumbnails/stopwatchTesterPrev.png)
+![Reaction Time Minigame](./public/media/readme_thumbnails/stopwatchTesterPrev.png)
+
+### Leaderboards
+
+Each minigame has a leaderboard at the bottom of the page. It will show the top 20 best attempts. A user can only enter one attempt per session when prompted(for every minigame), or update their session attempt
+
+![Leaderboard example](./public/media/readme_thumbnails/leaderboardPrev.png)
 
 ## License
 

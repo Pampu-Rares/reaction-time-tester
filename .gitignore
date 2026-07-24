@@ -1,3 +1,5 @@
+.env
+
 # General folder/file configurations
 .DS_Store
 .AppleDouble

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/stopwatchStyles.css">
+    <link rel="icon" href="./media/reactionTesterFavicon.png" type="image/x-icon">
+    <title>Stopwatch Tester</title>
+</head>
+<body>
+    <main>
+        <header>
+            <button id="change-gamemode"><img src="./media/back-arrow.svg" alt="back"></button>
+            <p>Time: 
+                <select id="time-selector">
+                    <option value="10" selected>10s</option>
+                    <option value="15">15s</option>
+                    <option value="20">20s</option>
+                </select>
+            </p>
+            <button id="select-mode">Select mode</button>
+        </header>
+
+        <h1>Stopwatch Tester</h1>
+        <div id="screen-overlay">
+            <div id="mode-selector-container">
+                <h2>Select mode</h2>
+                <div id="mode-selector">
+                    <button id="single-player"><img src="./media/1-player.svg"></button>
+                    <button id="2-player"><img src="./media/2-player.svg"></button>
+                </div>
+            </div>
+            <div id="winner-dialog">
+            </div>
+        </div>
+        
+        <div id="app-container" class="blurred">
+            <div id="minigame-container">
+                <p id="player"></p>
+                <p id="time-span"></p>
+                <p id="info-span"></p>
+            </div>
+            <div id="scoreboard">
+                <p>Best attempt:</p>
+                <span id="best-attempt"></span>
+                <p>Last attempt:</p>
+                <span id="current-attempt"></span>
+            </div>
+            <div id="players-scores">
+                <span>Player 1:</span>
+                <span id="player-1-score"></span>
+                <hr>
+                <span>Player 2:</span>
+                <span id="player-2-score"></span>
+            </div>
+            
+            <div id="leaderboard-container">
+                <span>Leaderboard</span>
+                <table id="leaderboard">
+                    
+                </table>
+            </div>
+        </div>
+        <dialog>
+            <div id="new-leaderboard-entry-container">
+                <button id="close-leaderboard-entry-container" class="close">X</button>
+                <h3>You have set a new record!</h3>
+                <label for="new-entry-name">
+                    Enter your name:
+                    <input type="text" maxlength="20" id="new-entry-name" placeholder="E.g: Ben Dover">
+                </label>
+                <p>Time: <span id="achieved-time-span"></span>s</p>
+                <p>Target: <span id="time-target-span"></span>s</p>
+                <button type="button" id="submit-leaderboard-entry">Submit</button>
+            <div>
+        </dialog>
+    </main>
+    <script src="scripts/leaderboardScripts/stopwatchTesterLeaderboard.js"></script>
+    <script src="scripts/stopwatchScript.js"></script>
+</body>
+</html>
