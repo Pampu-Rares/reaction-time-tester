@@ -46,7 +46,7 @@ select {
 }
 
 #play-btn:hover {
-    background-color: white;
+    background-color: var(--background-color);
     color: var(--text-color);
     transform: scale(1.05);
 }

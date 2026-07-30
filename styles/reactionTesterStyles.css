@@ -16,6 +16,7 @@ header {
     font-size: 1rem;
     display: inline-block;
     text-align: center;
+    color: var(--primary-color);
 }
 
 /* #region: two-player-stats */

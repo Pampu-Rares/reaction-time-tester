@@ -8,10 +8,12 @@
     --on-secondary-action: #4c90be;
     --accent-color: #4191f6;
 
+    /*
     --color-1: #6eeb83;
     --color-2: #a8d5e2;
     --color-3: #caf1f5;
     --color-4: #0DAC30;
+    */
 }
 
 * {
@@ -58,7 +60,6 @@ header {
 #change-gamemode, #select-mode {
     border-radius: 20px;
     font-size: 0.7rem;
-    background-color: var(--background-color);
     color: var(--text-color);
     border: 1px solid gray;
 }
@@ -76,10 +77,13 @@ header {
     height: clamp(17px, 8vw, 27px);
     overflow-y: hidden;
     padding: 2px;
+    background-color: #f4d0cd;
+
 }
 
 #select-mode {
     width: clamp(50px, 20vw, 180px);
+    background-color: var(--background-color);
     justify-self: end;
 }
 
@@ -174,6 +178,7 @@ header {
 }
 #mode-selector button:hover {
     transform: scale(1.03);
+    color: black;
     background-color: white;
 }
 
@@ -233,4 +238,29 @@ header {
 #close:hover {
     background-color: var(--primary-color);
     color: var(--background-color);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+    font-size: clamp(25px, 5vw, 35px);
+    font-family: Arial, Helvetica, sans-serif;
+    --text-color: #f3eeee;
+    --background-color: #791612;
+    --primary-color: #d59f9f;
+    --secondary-color: #1754a0;
+    --on-secondary-action: #d34949;
+    --accent-color: #4191f6;
+    }
+
+    #mode-selector button {
+        background-color: transparent;
+    }
+
+    button:hover {
+        color: black;
+    }
+
+    #select-mode:hover {
+        color: black;
+    }
 }
