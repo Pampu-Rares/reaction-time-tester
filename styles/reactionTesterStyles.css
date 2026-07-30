@@ -16,7 +16,6 @@ header {
     font-size: 1rem;
     display: inline-block;
     text-align: center;
-    color: var(--primary-color);
 }
 
 /* #region: two-player-stats */
@@ -39,3 +38,10 @@ hr {
 }
 
 /* #endregion */
+
+@media (prefers-color-scheme: dark) {
+    #info-span {
+        color: white;
+    }
+}
+ 
